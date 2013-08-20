@@ -1,0 +1,17 @@
+<h1>Listing posts</h1>
+
+<% @posts.each do |post| %>
+    <h3><%= post.title %></h3>
+    <br><br>
+    <%= image_tag post.image_url(:thumb).to_s %>
+    <br><br>
+    <%= post.post_text %>
+    <br><br>
+    <%= link_to 'Show', post %>
+    <br><br>
+    <hr>
+<% end %>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
